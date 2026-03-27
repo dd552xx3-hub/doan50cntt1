@@ -1,1 +1,18 @@
+const search = document.getElementById("searchInput").value.toLowerCase();
+  const location = document.getElementById("locationFilter").value;
+
+  const filtered = tours.filter(tour => {
+    const matchSearch = tour.name.toLowerCase().includes(search);
+    const matchLocation = location === "" || tour.location === location;
+    return matchSearch && matchLocation;
+  });
+
+  renderTours(filtered);
+}
+
+document.getElementById("searchInput").addEventListener("input", filterTours);
+document.getElementById("locationFilter").addEventListener("change", filterTours);
+
+renderTours();
+renderBookingHistory();
 
