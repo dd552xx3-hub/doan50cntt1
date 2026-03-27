@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Booking Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <header class="navbar">
+    <div class="logo">🌍 Travel Booking</div>
+    <nav>
+      <a href="#home">Trang chủ</a>
+      <a href="#tours">Tour</a>
+      <a href="#history">Lịch sử Booking</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-overlay">
+      <h1>Khám Phá Việt Nam Cùng Chúng Tôi</h1>
+      <p>Đặt tour nhanh chóng - tiện lợi - dễ dàng</p>
+      <a href="#tours" class="hero-btn">Xem Tour Ngay</a>
+    </div>
+  </section>
+
+  <section class="search-section">
+    <h2>Tìm Kiếm Tour</h2>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Tìm theo tên tour..." />
+      <select id="locationFilter">
+        <option value="">Tất cả địa điểm</option>
+        <option value="Đà Lạt">Đà Lạt</option>
+        <option value="Phú Quốc">Phú Quốc</option>
+        <option value="Đà Nẵng">Đà Nẵng</option>
+        <option value="Nha Trang">Nha Trang</option>
+      </select>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="tours">
+      <h2 class="section-title">Danh Sách Tour</h2>
+      <div id="tourList" class="tour-grid"></div>
+    </section>
+
+    <section id="detailSection" class="hidden">
+      <h2 class="section-title">Chi Tiết Tour</h2>
+      <div id="tourDetail" class="detail-card"></div>
+    </section>
+
+    <section id="bookingSection" class="hidden">
+      <h2 class="section-title">Đặt Tour</h2>
+      <form id="bookingForm" class="booking-form">
+        <input type="text" id="customerName" placeholder="Họ và tên" required />
+        <input type="email" id="customerEmail" placeholder="Email" required />
+        <input type="tel" id="customerPhone" placeholder="Số điện thoại" required />
+        <input type="number" id="peopleCount" placeholder="Số người" min="1" required />
+        
+        <div class="price-box">
+          <p><strong>Tổng tiền:</strong> <span id="totalPrice">0 VNĐ</span></p>
+        </div>
+
+        <button type="submit">Xác nhận đặt tour</button>
+      </form>
+    </section>
+
+    <section id="history">
+      <h2 class="section-title">Lịch Sử Booking</h2>
+      <div id="bookingHistory" class="history-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Travel Booking Demo - Website Đặt Tour Du Lịch</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
