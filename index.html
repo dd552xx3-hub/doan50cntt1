@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>50CNTT1 | Hệ thống Đặt Tour</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">🌍 Du Lịch 50CNTT1</a>
+    <nav>
+      <a href="tours.html">Danh sách Tour</a>
+      <a href="history.html" id="navHistory" class="hidden">Lịch sử</a>
+      <a href="admin.html" id="adminNavBtn" class="admin-link hidden">⚙️ Admin</a>
+      <a href="auth.html" id="loginNavBtn">Đăng nhập</a>
+      <a id="logoutBtn" class="hidden" style="color: #ef4444;">Đăng xuất</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Khám Phá Việt Nam Cùng 50CNTT1</h1>
+      <a href="tours.html" class="hero-btn">Xem Tour Ngay</a>
+    </div>
+  </section>
+  <main class="container">
+    <h2 class="section-title">Tour Nổi Bật</h2>
+    <div id="tourList" class="tour-grid"></div>
+  </main>
+  
+  <div id="toastContainer" class="toast-container"></div>
+  <div id="chatbot" class="chatbot-wrapper hidden">
+    <div class="chatbot-header">
+      <span>🤖 Trợ lý 50CNTT1</span>
+      <button type="button" id="closeChat" style="background:none; border:none; color:white; font-size:18px; cursor:pointer;">✖</button>
+    </div>
+    <div id="chatMessages" class="chat-messages"></div>
+    <div class="chat-input-area">
+      <input type="text" id="chatInput" placeholder="Hỏi tôi bất cứ điều gì..." />
+      <button type="button" id="sendChat" style="background:none; border:none; color:#2563eb; padding:0 15px; cursor:pointer; font-weight:bold;">Gửi</button>
+    </div>
+  </div>
+  <button id="openChatBtn" class="floating-chat-btn">💬 Chat</button>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
