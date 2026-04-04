@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">⚙️ ADMIN 50CNTT1</a>
+    <nav>
+      <a href="index.html">Quay về Web</a>
+    </nav>
+  </header>
+  <main class="container">
+    <h2>📦 Quản lý Tất cả Đơn hàng</h2>
+    <table class="admin-table">
+      <thead><tr><th>Khách</th><th>Tour</th><th>Tổng tiền</th><th>Trạng thái</th><th>Hành động</th></tr></thead>
+      <tbody id="adminBookingTable"></tbody>
+    </table>
+    <section class="booking-form" style="max-width: 100%; margin-top: 40px;">
+      <h2>👥 Danh sách Khách hàng Hệ thống</h2>
+      <ul id="customerList" class="history-list" style="margin-top:20px; list-style:none; padding:0;"></ul>
+    </section>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
