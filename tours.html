@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh Sách Tour</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">🌍 Du Lịch 50CNTT1</a>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="auth.html" id="loginNavBtn">Đăng nhập</a>
+      <a id="logoutBtn" class="hidden" style="color: #ef4444;">Đăng xuất</a>
+    </nav>
+  </header>
+  <div class="search-section">
+    <h2>Tìm Kiếm Tour</h2>
+    <div class="search-box">
+       <input type="text" id="searchInput" placeholder="Tìm theo tên..." style="padding:10px; width:300px;">
+    </div>
+  </div>
+  <main class="container">
+    <div id="tourList" class="tour-grid"></div>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
