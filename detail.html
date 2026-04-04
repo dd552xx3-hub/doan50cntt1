@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi Tiết Tour</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">🌍 Du Lịch 50CNTT1</a>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="tours.html">Quay lại Tour</a>
+    </nav>
+  </header>
+  <main class="container" style="display: flex; gap: 30px; flex-wrap: wrap;">
+    <section style="flex: 1; min-width: 300px;" id="tourDetailBox"></section>
+    <section class="booking-form" style="flex: 1; min-width: 300px;">
+      <h2>Form Đặt Tour</h2><br>
+      <form id="bookingForm">
+        <div class="input-group"><input type="text" id="customerName" placeholder="Họ và tên" required /></div>
+        <div class="input-group"><input type="tel" id="customerPhone" placeholder="Số điện thoại" required /></div>
+        <div class="input-group"><input type="number" id="peopleCount" placeholder="Số người" value="1" min="1" required /></div>
+        <div class="input-group promo-input">
+          <input type="text" id="promoCode" placeholder="Mã giảm giá SUMMER2026" />
+          <button type="button" id="applyPromoBtn">Áp dụng</button>
+        </div>
+        <h3 style="margin:20px 0;">Tổng tiền: <span id="totalPrice" style="color:red">0</span></h3>
+        <button type="submit" class="btn" style="width:100%">XÁC NHẬN ĐẶT TOUR</button>
+      </form>
+    </section>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
