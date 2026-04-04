@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Xác thực</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" style="max-width: 400px; margin-top: 100px;">
+    <div class="booking-form">
+      <h2 id="authTitle" style="text-align:center; margin-bottom:20px;">Đăng Nhập</h2>
+      <div class="input-group"><input type="email" id="authEmail" placeholder="Email" required></div>
+      <div class="input-group"><input type="password" id="authPassword" placeholder="Mật khẩu (>6 ký tự)" required></div>
+      <button id="authBtn" class="btn" style="width:100%">Đăng Nhập</button>
+      <p style="text-align:center; margin-top:15px; color:#2563eb; cursor:pointer;" id="toggleAuth">Chưa có tài khoản? Đăng ký</p>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="config.js"></script>
+  <script>
+    let isLogin = true;
+    document.getElementById('toggleAuth').onclick = () => {
+      isLogin = !isLogin;
+      document.getElementById('authTitle').innerText = isLogin ? "Đăng Nhập" : "Đăng Ký";
+      document.getElementById('authBtn').innerText = isLogin ? "Đăng Nhập" : "Đăng Ký";
+      document.getElementById('toggleAuth').innerText = isLogin ? "Chưa có tài khoản? Đăng ký" : "Đã có tài khoản? Đăng nhập";
+    };
+    document.getElementById('authBtn').onclick = () => {
+      const e = document.getElementById('authEmail').value;
+      const p = document.getElementById('authPassword').value;
+      if (isLogin) {
+        auth.signInWithEmailAndPassword(e, p).then(() => location.href='index.html').catch(err => alert(err.message));
+      } else {
+        auth.createUserWithEmailAndPassword(e, p).then((cred) => { 
+          db.collection("customers").add({ email: e, joinDate: new Date().toLocaleString("vi-VN"), uid: cred.user.uid });
+          alert("Thành công!"); 
+          location.href='index.html'; 
+        }).catch(err => alert(err.message));
+      }
+    };
+  </script>
+</body>
+</html>
